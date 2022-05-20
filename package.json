@@ -12,6 +12,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "neru-alpha": "^0.3.0"
+    "neru-alpha": "^2.1.0"
   }
 }
