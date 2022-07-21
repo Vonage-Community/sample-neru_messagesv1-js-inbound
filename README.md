@@ -16,11 +16,7 @@ Create a Vonage Application if you do not have one already, and [link a phone nu
 neru app create --name "neru application"  
 ```
 
-Go to [your application](https://dashboard.nexmo.com/applications) on the Vonage API Dashboard and set the right version of Messages API. For this app it should be v1:
-
-![dashboard messages setting](dashboard.png)
-
-Then initialize NeRu, choosing the `node.js` for runtime and `skip` for the template:
+Then initialize NeRu, choosing the `nodejs16` for runtime and `skip` for the template:
 
 ```sh
 neru init
@@ -33,13 +29,19 @@ project:
     name: $YOUR_PROJECT_NAME
 instance:
     name: dev
-    runtime: nodejs
+    runtime: nodejs16
     region: aws.euw1
     application-id: $YOUR_VONAGE_APPLICATION_ID
+    entrypoint: [node, index.js]
+    capabilities:
+        - messaging
     configurations:
         contact:
             number: "$YOUR_VONAGE_NUMBER"
-            type: phone
+            type: sms
+debug:
+    name: debug
+    entrypoint: [nodemon, --inspect, index.js]
 ```
 
 Then start the project locally using:
@@ -47,5 +49,9 @@ Then start the project locally using:
 ```sh
 neru debug
 ```
+
+Go to [your application](https://dashboard.nexmo.com/applications) on the Vonage API Dashboard and set the right version of Messages API. For this app it should be v1:
+
+![dashboard messages setting](dashboard.png)
 
 Now you text the number linked to your application.
