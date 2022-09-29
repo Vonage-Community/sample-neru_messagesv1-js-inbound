@@ -8,7 +8,7 @@ const port = process.env.NERU_APP_PORT;
 const session = neru.createSession();
 const messages = new Messages(session);
 
-const vonageNumber = JSON.parse(process.env.NERU_CONFIGURATIONS).contact;
+const vonageNumber = { type: 'sms', number: process.env.VONAGE_NUMBER };
 
 // Listen for messages from all numbers
 await messages.onMessage(
