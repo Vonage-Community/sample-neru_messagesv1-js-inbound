@@ -1,5 +1,7 @@
 # Receiving and Sending SMS Messages Using NeRu and the Messages API (V1)
 
+## ❗❗❗ **This repo is now deprecated. Check the [Vonage Developer Blog](https://developer.vonage.com/en/blog) for more blog posts and tutorials. For more sample Vonage projects, check the [Vonage Community GitHub repo](https://github.com/Vonage-Community).**
+
 This project shows how to use NeRu to receive and send SMS messages with the Messages API V1.
 
 ## Receive Inbound SMS Webhooks
